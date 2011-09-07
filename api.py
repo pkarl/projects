@@ -1,5 +1,6 @@
 from tastypie.authorization import Authorization
 from tastypie.resources import ModelResource
+from tastypie import fields
 from models import Company, Project, Client, Resource, Assignment
 
 class CompanyResource(ModelResource):
@@ -15,6 +16,7 @@ class ProjectResource(ModelResource):
         authorization= Authorization()
 
 class ClientResource(ModelResource):
+    company = fields.ForeignKey(CompanyResource, 'company')
     class Meta:
         queryset = Client.objects.all()
         resource_name = 'client'
