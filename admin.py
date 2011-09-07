@@ -1,5 +1,5 @@
 from django.contrib import admin
-from outlook.outlook_pm.models import Company, Project, Client, Resource, Assignment
+from models import Company, Project, Client, Resource, Assignment
 
 class CompanyAdmin(admin.ModelAdmin):
     pass
